@@ -3,7 +3,7 @@ Super-lightweight library to detect which device is used
 
 ## Usage
 
-`Device.swift` extends the `UIDevice` class by adding a `deviceType` property of type `enum DeviceType`
+`Device.swift` extends the `UIDevice` class by adding a `deviceType: DeviceType` property.
 
 ```swift
 import Device
@@ -20,7 +20,7 @@ default: print("Check other available cases of DeviceType")
 ### Available `DeviceType` cases
 
 ```swift
-public enum DeviceType {
+enum DeviceType {
     case NotAvailable
 
     case IPhone2G
