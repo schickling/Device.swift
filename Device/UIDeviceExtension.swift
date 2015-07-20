@@ -44,7 +44,7 @@ public enum DeviceType {
 
 func parseDeviceType(identifier: String) -> DeviceType {
     
-    if identifier == "i386" || identifier == "x86_64" || identifier.hasPrefix("iPhone") || identifier.hasPrefix("iPod") || identifier.hasPrefix("iPad") {
+    if identifier == "i386" || identifier == "x86_64" {
         return .Simulator
     }
     
