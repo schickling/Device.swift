@@ -11,7 +11,7 @@ import Device
 let deviceType = UIDevice.currentDevice().deviceType
 
 switch deviceType {
-case .IPhone6: print("Do stuff for iPhone6")
+case .IPhone6SPlus: print("Do stuff for iPhone6S Plus")
 case .IPadMini: print("Do stuff for iPad mini")
 default: print("Check other available cases of DeviceType")
 }
@@ -33,6 +33,8 @@ enum DeviceType {
     case IPhone5S
     case IPhone6Plus
     case IPhone6
+    case IPhone6S
+    case IPhone6SPlus
 
     case IPodTouch1G
     case IPodTouch2G
