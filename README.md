@@ -65,5 +65,16 @@ enum DeviceType {
 Add the following to your `Cartfile` and follow [these instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application)
 
 ```
-github "schickling/Device.swift" >= 0.1.0
+github "schickling/Device.swift"
+```
+
+### CocoaPods
+
+CocoaPods 0.36 adds supports for Swift and embedded frameworks. To integrate `Device` into your project add the following to your `Podfile`:
+
+```ruby
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'Device'
 ```
