@@ -76,5 +76,5 @@ CocoaPods 0.36 adds supports for Swift and embedded frameworks. To integrate `De
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'Device'
+pod 'Device.swift'
 ```
