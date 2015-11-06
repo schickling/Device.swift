@@ -78,3 +78,7 @@ use_frameworks!
 
 pod 'Device.swift'
 ```
+
+## License
+
+Device.swift is available under the MIT license. See the LICENSE file for more info.
