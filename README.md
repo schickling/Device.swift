@@ -60,6 +60,15 @@ enum DeviceType {
 
 ## Install
 
+### CocoaPods
+
+Device.swift is available through [CocoaPods](http://cocoapods.org), to install
+it simply add the following line to your Podfile:
+
+```ruby
+pod "Device.swift"
+```
+
 ### Carthage
 
 Add the following to your `Cartfile` and follow [these instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application)
@@ -67,3 +76,7 @@ Add the following to your `Cartfile` and follow [these instructions](https://git
 ```
 github "schickling/Device.swift" >= 0.1.0
 ```
+
+## License
+
+Device.swift is available under the MIT license. See the LICENSE file for more info.
