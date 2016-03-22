@@ -23,6 +23,7 @@ public enum DeviceType {
     case IPhone6
     case IPhone6S
     case IPhone6SPlus
+    case IPhoneSE
 
     case IPodTouch1G
     case IPodTouch2G
@@ -40,6 +41,8 @@ public enum DeviceType {
 
     case IPadAir
     case IPadAir2
+    
+    case IPadPro
 
     case Simulator
 }
@@ -63,6 +66,7 @@ func parseDeviceType(identifier: String) -> DeviceType {
     case "iPhone7,2": return .IPhone6
     case "iPhone8,1": return .IPhone6SPlus
     case "iPhone8,2": return .IPhone6S
+    case "iPhone8,4": return .IPhoneSE
 
     case "iPod1,1": return .IPodTouch1G
     case "iPod2,1": return .IPodTouch2G
@@ -79,6 +83,7 @@ func parseDeviceType(identifier: String) -> DeviceType {
     case "iPad4,4", "iPad4,5", "iPad4,6": return .IPadMiniRetina
     case "iPad4,7", "iPad4,8": return .IPadMini3
     case "iPad5,3", "iPad5,4": return .IPadAir2
+    case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8": return .IPadPro
 
     default: return .NotAvailable
     }
