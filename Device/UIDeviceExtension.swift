@@ -65,8 +65,8 @@ func parseDeviceType(identifier: String) -> DeviceType {
     case "iPhone6,1", "iPhone6,2": return .IPhone5S
     case "iPhone7,1": return .IPhone6Plus
     case "iPhone7,2": return .IPhone6
-    case "iPhone8,1": return .IPhone6SPlus
-    case "iPhone8,2": return .IPhone6S
+    case "iPhone8,2": return .IPhone6SPlus
+    case "iPhone8,1": return .IPhone6S
     case "iPhone8,4": return .IPhoneSE
 
     case "iPod1,1": return .IPodTouch1G
