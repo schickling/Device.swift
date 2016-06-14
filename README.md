@@ -1,12 +1,12 @@
 # Device.swift [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-Super-lightweight library to detect used device 
+Super-lightweight library to detect used device
 
 ## Usage
 
 `Device.swift` extends the `UIDevice` class by adding a `deviceType: DeviceType` property.
 
 ```swift
-import Device
+import Device_swift
 
 let deviceType = UIDevice.currentDevice().deviceType
 
