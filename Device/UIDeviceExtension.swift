@@ -7,86 +7,80 @@
 //
 
 import Foundation
-import UIKit
 
-public enum DeviceType {
-    case notAvailable
+public enum DeviceType:String {
+    case NotAvailable
 
-    case iPhone2G
-    case iPhone3G
-    case iPhone3GS
-    case iPhone4
-    case iPhone4S
-    case iPhone5
-    case iPhone5C
-    case iPhone5S
-    case iPhone6Plus
-    case iPhone6
-    case iPhone6S
-    case iPhone6SPlus
-    case iPhoneSE
+    case IPhone2G = "IPhone2G"
+    case IPhone3G = "IPhone3G"
+    case IPhone3GS = "IPhone3GS"
+    case IPhone4 = "IPhone4"
+    case IPhone4S = "IPhone4S"
+    case IPhone5 = "IPhone5"
+    case IPhone5C = "IPhone5C"
+    case IPhone5S = "IPhone5S"
+    case IPhone6Plus = "IPhone6Plus"
+    case IPhone6 = "IPhone6"
+    case IPhone6S = "IPhone6S"
+    case IPhone6SPlus = "IPhone6SPlus"
 
-    case iPodTouch1G
-    case iPodTouch2G
-    case iPodTouch3G
-    case iPodTouch4G
-    case iPodTouch5G
+    case IPodTouch1G = "IPodTouch1G"
+    case IPodTouch2G = "IPodTouch2G"
+    case IPodTouch3G = "IPodTouch3G"
+    case IPodTouch4G = "IPodTouch4G"
+    case IPodTouch5G = "IPodTouch5G"
 
-    case iPad
-    case iPad2
-    case iPad3
-    case iPad4
-    case iPadMini
-    case iPadMiniRetina
-    case iPadMini3
+    case IPad = "IPad"
+    case IPad2 = "IPad2"
+    case IPad3 = "IPad3"
+    case IPad4 = "IPad4"
+    case IPadMini = "IPadMini"
+    case IPadMiniRetina = "IPadMiniRetina"
+    case IPadMini3 = "IPadMini3"
 
-    case iPadAir
-    case iPadAir2
-    
-    case iPadPro
+    case IPadAir = "IPadAir"
+    case IPadAir2 = "IPadAir2"
 
-    case simulator
+    case Simulator = "Simulator"
 }
 
-func parseDeviceType(_ identifier: String) -> DeviceType {
+func parseDeviceType(identifier: String) -> DeviceType {
 
     if identifier == "i386" || identifier == "x86_64" {
-        return .simulator
+        return .Simulator
     }
 
     switch identifier {
-    case "iPhone1,1": return .iPhone2G
-    case "iPhone1,2": return .iPhone3G
-    case "iPhone2,1": return .iPhone3GS
-    case "iPhone3,1", "iPhone3,2", "iPhone3,3": return .iPhone4
-    case "iPhone4,1": return .iPhone4S
-    case "iPhone5,1", "iPhone5,2": return .iPhone5
-    case "iPhone5,3", "iPhone5,4": return .iPhone5C
-    case "iPhone6,1", "iPhone6,2": return .iPhone5S
-    case "iPhone7,1": return .iPhone6Plus
-    case "iPhone7,2": return .iPhone6
-    case "iPhone8,2": return .iPhone6SPlus
-    case "iPhone8,1": return .iPhone6S
-    case "iPhone8,4": return .iPhoneSE
+    case "iPhone1,1": return .IPhone2G
+    case "iPhone1,2": return .IPhone3G
+    case "iPhone2,1": return .IPhone3GS
+    case "iPhone3,1", "iPhone3,2", "iPhone3,3": return .IPhone4
+    case "iPhone4,1": return .IPhone4S
+    case "iPhone5,1", "iPhone5,2": return .IPhone5
+    case "iPhone5,3", "iPhone5,4": return .IPhone5C
+    case "iPhone6,1", "iPhone6,2": return .IPhone5S
+    case "iPhone7,1": return .IPhone6Plus
+    case "iPhone7,2": return .IPhone6
+    case "iPhone8,1": return .IPhone6SPlus
+    case "iPhone8,2": return .IPhone6S
 
-    case "iPod1,1": return .iPodTouch1G
-    case "iPod2,1": return .iPodTouch2G
-    case "iPod3,1": return .iPodTouch3G
-    case "iPod4,1": return .iPodTouch4G
-    case "iPod5,1": return .iPodTouch5G
+    case "iPod1,1": return .IPodTouch1G
+    case "iPod2,1": return .IPodTouch2G
+    case "iPod3,1": return .IPodTouch3G
+    case "iPod4,1": return .IPodTouch4G
+    case "iPod5,1": return .IPodTouch5G
 
-    case "iPad1,1", "iPad1,2": return .iPad
-    case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return .iPad2
-    case "iPad2,5", "iPad2,6", "iPad2,7": return .iPadMini
-    case "iPad3,1", "iPad3,2", "iPad3,3": return .iPad3
-    case "iPad3,4", "iPad3,5", "iPad3,6": return .iPad4
-    case "iPad4,1", "iPad4,2", "iPad4,3": return .iPadAir
-    case "iPad4,4", "iPad4,5", "iPad4,6": return .iPadMiniRetina
-    case "iPad4,7", "iPad4,8": return .iPadMini3
-    case "iPad5,3", "iPad5,4": return .iPadAir2
-    case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8": return .iPadPro
+    case "iPad1,1", "iPad1,2": return .IPad
+    case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return .IPad2
+    case "iPad2,5", "iPad2,6", "iPad2,7": return .IPadMini
+    case "iPad3,1", "iPad3,2", "iPad3,3": return .IPad3
+    case "iPad3,4", "iPad3,5", "iPad3,6": return .IPad4
+    case "iPad4,1", "iPad4,2", "iPad4,3": return .IPadAir
+    case "iPad4,4", "iPad4,5", "iPad4,6": return .IPadMiniRetina
+    case "iPad4,7", "iPad4,8": return .IPadMini3
+    case "iPad5,3", "iPad5,4": return .IPadAir2
 
-    default: return .notAvailable
+    default: return .NotAvailable
     }
 }
 
@@ -101,8 +95,8 @@ public extension UIDevice {
         var identifier = ""
 
         for child in mirror.children {
-            if let value = child.value as? Int8 , value != 0 {
-                identifier.append(String(UnicodeScalar(UInt8(value))))
+            if let value = child.value as? Int8 where value != 0 {
+                identifier.append(UnicodeScalar(UInt8(value)))
             }
         }
 
