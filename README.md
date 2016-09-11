@@ -6,7 +6,7 @@ Super-lightweight library to detect used device
 `Device.swift` extends the `UIDevice` class by adding a `deviceType: DeviceType` property.
 
 ```swift
-import Device_swift
+import Device
 
 let deviceType = UIDevice.currentDevice().deviceType
 
@@ -21,39 +21,42 @@ default: print("Check other available cases of DeviceType")
 
 ```swift
 enum DeviceType {
-    case NotAvailable
+    case notAvailable
 
-    case IPhone2G
-    case IPhone3G
-    case IPhone3GS
-    case IPhone4
-    case IPhone4S
-    case IPhone5
-    case IPhone5C
-    case IPhone5S
-    case IPhone6Plus
-    case IPhone6
-    case IPhone6S
-    case IPhone6SPlus
+    case iPhone2G
+    case iPhone3G
+    case iPhone3GS
+    case iPhone4
+    case iPhone4S
+    case iPhone5
+    case iPhone5C
+    case iPhone5S
+    case iPhone6Plus
+    case iPhone6
+    case iPhone6S
+    case iPhone6SPlus
+    case iPhoneSE
 
-    case IPodTouch1G
-    case IPodTouch2G
-    case IPodTouch3G
-    case IPodTouch4G
-    case IPodTouch5G
+    case iPodTouch1G
+    case iPodTouch2G
+    case iPodTouch3G
+    case iPodTouch4G
+    case iPodTouch5G
 
-    case IPad
-    case IPad2
-    case IPad3
-    case IPad4
-    case IPadMini
-    case IPadMiniRetina
-    case IPadMini3
+    case iPad
+    case iPad2
+    case iPad3
+    case iPad4
+    case iPadMini
+    case iPadMiniRetina
+    case iPadMini3
 
-    case IPadAir
-    case IPadAir2
+    case iPadAir
+    case iPadAir2
+    
+    case iPadPro
 
-    case Simulator
+    case simulator
 }
 ```
 
