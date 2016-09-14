@@ -24,6 +24,8 @@ public enum DeviceType {
     case iPhone6
     case iPhone6S
     case iPhone6SPlus
+    case iPhone7
+    case iPhone7Plus
     case iPhoneSE
 
     case iPodTouch1G
