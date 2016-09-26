@@ -6,7 +6,7 @@ Super-lightweight library to detect used device
 `Device.swift` extends the `UIDevice` class by adding a `deviceType: DeviceType` property.
 
 ```swift
-import Device_swift
+import Device
 
 let deviceType = UIDevice.currentDevice().deviceType
 
