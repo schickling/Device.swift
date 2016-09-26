@@ -9,45 +9,45 @@
 import Foundation
 import UIKit
 
-public enum DeviceType {
-    case notAvailable
-
-    case iPhone2G
-    case iPhone3G
-    case iPhone3GS
-    case iPhone4
-    case iPhone4S
-    case iPhone5
-    case iPhone5C
-    case iPhone5S
-    case iPhone6Plus
-    case iPhone6
-    case iPhone6S
-    case iPhone6SPlus
-    case iPhone7
-    case iPhone7Plus
-    case iPhoneSE
-
-    case iPodTouch1G
-    case iPodTouch2G
-    case iPodTouch3G
-    case iPodTouch4G
-    case iPodTouch5G
-
-    case iPad
-    case iPad2
-    case iPad3
-    case iPad4
-    case iPadMini
-    case iPadMiniRetina
-    case iPadMini3
-
-    case iPadAir
-    case iPadAir2
+public enum DeviceType:String {
+    case notAvailable   = "notAvailable"
     
-    case iPadPro
-
-    case simulator
+    case iPhone2G       = "iPhone2G"
+    case iPhone3G       = "iPhone3G"
+    case iPhone3GS      = "iPhone3GS"
+    case iPhone4        = "iPhone4"
+    case iPhone4S       = "iPhone4S"
+    case iPhone5        = "iPhone5"
+    case iPhone5C       = "iPhone5C"
+    case iPhone5S       = "iPhone5S"
+    case iPhone6Plus    = "iPhone6Plus"
+    case iPhone6        = "iPhone6"
+    case iPhone6S       = "iPhone6S"
+    case iPhone6SPlus   = "iPhone6SPlus"
+    case iPhone7        = "iPhone7"
+    case iPhone7Plus    = "iPhone7Plus"
+    case iPhoneSE       = "iPhoneSE"
+    
+    case iPodTouch1G    = "iPodTouch1G"
+    case iPodTouch2G    = "iPodTouch2G"
+    case iPodTouch3G    = "iPodTouch3G"
+    case iPodTouch4G    = "iPodTouch4G"
+    case iPodTouch5G    = "iPodTouch5G"
+    
+    case iPad           = "iPad"
+    case iPad2          = "iPad2"
+    case iPad3          = "iPad3"
+    case iPad4          = "iPad4"
+    case iPadMini       = "iPadMini"
+    case iPadMiniRetina = "iPadMiniRetina"
+    case iPadMini3      = "iPadMini3"
+    
+    case iPadAir        = "iPadAir"
+    case iPadAir2       = "iPadAir2"
+    
+    case iPadPro        = "iPadPro"
+    
+    case simulator      = "simulator"
 }
 
 func parseDeviceType(_ identifier: String) -> DeviceType {
