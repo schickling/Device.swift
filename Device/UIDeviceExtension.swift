@@ -41,7 +41,8 @@ public enum DeviceType:String {
     case iPadMini       = "iPadMini"
     case iPadMiniRetina = "iPadMiniRetina"
     case iPadMini3      = "iPadMini3"
-    
+    case iPadMini4      = "iPadMini4"
+  
     case iPadAir        = "iPadAir"
     case iPadAir2       = "iPadAir2"
     
@@ -85,6 +86,7 @@ func parseDeviceType(_ identifier: String) -> DeviceType {
     case "iPad4,1", "iPad4,2", "iPad4,3": return .iPadAir
     case "iPad4,4", "iPad4,5", "iPad4,6": return .iPadMiniRetina
     case "iPad4,7", "iPad4,8": return .iPadMini3
+    case "iPad5,1", "iPad5,2": return .iPadMini4
     case "iPad5,3", "iPad5,4": return .iPadAir2
     case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8": return .iPadPro
 
