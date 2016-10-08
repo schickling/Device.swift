@@ -46,7 +46,8 @@ public enum DeviceType:String {
     case iPadAir        = "iPadAir"
     case iPadAir2       = "iPadAir2"
     
-    case iPadPro        = "iPadPro"
+    case iPadPro9Inch   = "iPadPro9Inch"
+    case iPadPro12Inch  = "iPadPro12Inch"
     
     case simulator      = "simulator"
 }
@@ -88,7 +89,8 @@ func parseDeviceType(_ identifier: String) -> DeviceType {
     case "iPad4,7", "iPad4,8": return .iPadMini3
     case "iPad5,1", "iPad5,2": return .iPadMini4
     case "iPad5,3", "iPad5,4": return .iPadAir2
-    case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8": return .iPadPro
+    case "iPad6,3", "iPad6,4": return .iPadPro9Inch
+    case "iPad6,7", "iPad6,8": return .iPadPro12Inch
 
     default: return .notAvailable
     }
