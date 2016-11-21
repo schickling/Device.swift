@@ -39,7 +39,8 @@ pod 'Device.swift'
 ## Usage
 
 ```swift
-import Device // Use import Device_swift if you're using Cocoapods
+import Device
+// Use import Device_swift if you're using Cocoapods
 
 let deviceType = UIDevice.current.deviceType
 
