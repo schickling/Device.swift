@@ -14,23 +14,6 @@ Super-lightweight library to detect used device
 var deviceType: DeviceType
 ```
 
-## Usage
-
-```swift
-import Device
-
-let deviceType = UIDevice.current.deviceType
-
-switch deviceType {
-case .iPhone6SPlus: print("Do stuff for iPhone6S Plus")
-case .iPadMini: print("Do stuff for iPad mini")
-default: print("Check other available cases of DeviceType")
-}
-```
-
-Also, check out our [documentation][docs-url]
-
-
 ## Install
 
 ### Carthage
@@ -51,6 +34,24 @@ use_frameworks!
 
 pod 'Device.swift'
 ```
+
+
+## Usage
+
+```swift
+import Device // Use import Device_swift if you're using Cocoapods
+
+let deviceType = UIDevice.current.deviceType
+
+switch deviceType {
+case .iPhone6SPlus: print("Do stuff for iPhone6S Plus")
+case .iPadMini: print("Do stuff for iPad mini")
+default: print("Check other available cases of DeviceType")
+}
+```
+
+Also, check out our [Documentation][docs-url]
+
 
 
 [carthage-image]: https://img.shields.io/badge/Carthage-compatible-4BC51D.svg
