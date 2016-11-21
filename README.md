@@ -3,6 +3,7 @@
 [![Language][lang-image]][lang-url]
 [![License][license-image]][license-url]
 [![Platform][platform-image]][cocoapod-url]
+[![Documentation][docs-image]][docs-url]
 [![Pod Version][pod-version-image]][cocoapod-url]
 [![Carthage Compatible][carthage-image]][carthage-url]
 
