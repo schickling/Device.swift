@@ -1,61 +1,34 @@
-# Device.swift [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+# Device.swift
+
+[![Language][lang-image]][lang-url]
+[![License][license-image]][license-url]
+[![Platform][platform-image]][cocoapod-url]
+[![Pod Version][pod-version-image]][cocoapod-url]
+[![Carthage Compatible][carthage-image]][carthage-url]
+
 Super-lightweight library to detect used device
 
-## Usage
+`Device.swift` extends the `UIDevice` class by adding a property:
 
-`Device.swift` extends the `UIDevice` class by adding a `deviceType: DeviceType` property.
+```swift
+var deviceType: DeviceType
+```
+
+## Usage
 
 ```swift
 import Device
 
-let deviceType = UIDevice.currentDevice().deviceType
+let deviceType = UIDevice.current.deviceType
 
 switch deviceType {
-case .IPhone6SPlus: print("Do stuff for iPhone6S Plus")
-case .IPadMini: print("Do stuff for iPad mini")
+case .iPhone6SPlus: print("Do stuff for iPhone6S Plus")
+case .iPadMini: print("Do stuff for iPad mini")
 default: print("Check other available cases of DeviceType")
 }
 ```
 
-### Available `DeviceType` cases
-
-```swift
-enum DeviceType {
-    case NotAvailable
-
-    case IPhone2G
-    case IPhone3G
-    case IPhone3GS
-    case IPhone4
-    case IPhone4S
-    case IPhone5
-    case IPhone5C
-    case IPhone5S
-    case IPhone6Plus
-    case IPhone6
-    case IPhone6S
-    case IPhone6SPlus
-
-    case IPodTouch1G
-    case IPodTouch2G
-    case IPodTouch3G
-    case IPodTouch4G
-    case IPodTouch5G
-
-    case IPad
-    case IPad2
-    case IPad3
-    case IPad4
-    case IPadMini
-    case IPadMiniRetina
-    case IPadMini3
-
-    case IPadAir
-    case IPadAir2
-
-    case Simulator
-}
-```
+Also, check out our [documentation][docs-url]
 
 
 ## Install
@@ -70,7 +43,7 @@ github "schickling/Device.swift"
 
 ### CocoaPods
 
-CocoaPods 0.36 adds supports for Swift and embedded frameworks. To integrate `Device` into your project add the following to your `Podfile`:
+To integrate `Device` into your project add the following to your `Podfile`:
 
 ```ruby
 platform :ios, '8.0'
@@ -78,3 +51,19 @@ use_frameworks!
 
 pod 'Device.swift'
 ```
+
+
+[carthage-image]: https://img.shields.io/badge/Carthage-compatible-4BC51D.svg
+[docs-image]: https://img.shields.io/cocoapods/metrics/doc-percent/Device.swift.svg
+[lang-image]: https://img.shields.io/badge/swift-3.0-orange.svg
+[license-image]: https://img.shields.io/github/license/schickling/Device.swift.svg
+[platform-image]: https://img.shields.io/cocoapods/p/Device.swift.svg
+[pod-version-image]: https://img.shields.io/cocoapods/v/Device.swift.svg
+
+
+[carthage-url]: https://github.com/Carthage/Carthage
+[cocoapod-url]: http://cocoapods.org/pods/Device.swift
+[docs-url]: http://cocoadocs.org/docsets/Device.swift
+[homepage-url]: https://github.com/schickling/Device.swift.svg
+[lang-url]: https://swift.org/
+[license-url]: LICENSE
