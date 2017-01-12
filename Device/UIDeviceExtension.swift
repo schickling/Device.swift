@@ -14,7 +14,7 @@ import UIKit
 public extension UIDevice {
 	
 	/// Returns the `DeviceType` of the device in use
-	var deviceType: DeviceType {
+	public var deviceType: DeviceType {
 		return DeviceType.current
 	}
 }
@@ -61,6 +61,8 @@ public enum DeviceType: String, EnumProtocol {
 	case simulator
 	case notAvailable
 	
+	// MARK: Constants
+	
 	/// Returns the current device type
 	public static var current: DeviceType {
 		
@@ -80,9 +82,10 @@ public enum DeviceType: String, EnumProtocol {
 		return DeviceType(identifier: identifier)
 	}
 	
+	// MARK: Variables
 	
 	/// Returns the display name of the device type
-	var displayName: String {
+	public var displayName: String {
 		
 		switch self {
 		case .iPhone2G: return "iPhone 2G"
@@ -164,6 +167,8 @@ public enum DeviceType: String, EnumProtocol {
 		case .iPadPro12Inch: return ["iPad6,7", "iPad6,8"]
 		}
 	}
+	
+	// MARK: Inits
 	
 	/** Creates a device type
 	- parameter identifier: The identifier of the device
