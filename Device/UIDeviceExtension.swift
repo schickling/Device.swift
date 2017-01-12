@@ -101,8 +101,8 @@ public enum DeviceType: String, EnumProtocol {
 		case "iPhone8,2": self = .iPhone6SPlus
 		case "iPhone8,1": self = .iPhone6S
 		case "iPhone8,4": self = .iPhoneSE
-        case "iPhone9,1", "iPhone9,3": self = .iPhone7
-        case "iPhone9,2", "iPhone9,4": self = .iPhone7Plus
+		case "iPhone9,1", "iPhone9,3": self = .iPhone7
+		case "iPhone9,2", "iPhone9,4": self = .iPhone7Plus
 			
 		case "iPod1,1": self = .iPodTouch1G
 		case "iPod2,1": self = .iPodTouch2G
