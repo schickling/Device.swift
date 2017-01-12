@@ -173,57 +173,29 @@ public enum DeviceType: String, EnumProtocol {
 
 // MARK:
 
-/// Protocol gives basic functionality to Enums
-public protocol EnumProtocol: Hashable {
-	/// Returns Full Count of Enum
-	static var count: Int { get }
+internal protocol EnumProtocol: Hashable {
 	/// Returns All Enum Values
 	static var all: [Self] { get }
 }
 
 // MARK: -
 
-public extension EnumProtocol where Self:Hashable {
+// MARK: - Extensions
+
+internal extension EnumProtocol where Self:Hashable {
 	
-	/// Returns Full Count of Enum
-	static var count: Int {
-		
-		let byteCount = MemoryLayout<Self>.size
-		if byteCount == 0 {return 1}
-		if byteCount > 2 {fatalError("Unable to process enumeration")}
-		let singleByte = byteCount == 1
-		let minValue = singleByte ? 2 : 257
-		let maxValue = singleByte ? 2 << 8 : 2 << 16
-		for hashIndex in minValue..<maxValue {
-			switch singleByte {
-			case true:
-				if unsafeBitCast(UInt8(hashIndex), to: self).hashValue == 0 {
-					return hashIndex
-				}
-			case false:
-				if unsafeBitCast(UInt16(hashIndex), to: self).hashValue == 0 {
-					return hashIndex
-				}
-			}
-		}
-		return maxValue
-	}
-	
-	/// Returns All Enum Values
 	static var all: [Self] {
-		
-		var enumerationMembers = [Self]()
-		let singleByte = MemoryLayout<Self>.size == 1
-		for index in 0..<Self.count {
-			switch singleByte {
-			case true:
-				let member = unsafeBitCast(UInt8(index), to: self)
-				enumerationMembers.append(member)
-			case false:
-				let member = unsafeBitCast(UInt16(index), to: self)
-				enumerationMembers.append(member)
+		typealias Type = Self
+		let cases = AnySequence { () -> AnyIterator<Type> in
+			var raw = 0
+			return AnyIterator {
+				let current: Self = withUnsafePointer(to: &raw) { $0.withMemoryRebound(to: Type.self, capacity: 1) { $0.pointee } }
+				guard current.hashValue == raw else { return nil }
+				raw += 1
+				return current
 			}
 		}
-		return enumerationMembers
+		
+		return Array(cases)
 	}
 }
