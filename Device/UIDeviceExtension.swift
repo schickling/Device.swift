@@ -21,44 +21,44 @@ public extension UIDevice {
 
 /// Enum representing the different types of iOS devices available
 public enum DeviceType: String, EnumProtocol {
-    case iPhone2G
-    case iPhone3G
-    case iPhone3GS
-    case iPhone4
-    case iPhone4S
-    case iPhone5
-    case iPhone5C
-    case iPhone5S
-    case iPhone6Plus
-    case iPhone6
-    case iPhone6S
-    case iPhone6SPlus
-    case iPhone7
-    case iPhone7Plus
-    case iPhoneSE
-    
-    case iPodTouch1G
-    case iPodTouch2G
-    case iPodTouch3G
-    case iPodTouch4G
-    case iPodTouch5G
-    
-    case iPad
-    case iPad2
-    case iPad3
-    case iPad4
-    case iPadMini
-    case iPadMiniRetina
-    case iPadMini3
-    case iPadMini4
-  
-    case iPadAir
-    case iPadAir2
-    
-    case iPadPro9Inch
-    case iPadPro12Inch
-    
-    case simulator
+	case iPhone2G
+	case iPhone3G
+	case iPhone3GS
+	case iPhone4
+	case iPhone4S
+	case iPhone5
+	case iPhone5C
+	case iPhone5S
+	case iPhone6Plus
+	case iPhone6
+	case iPhone6S
+	case iPhone6SPlus
+	case iPhone7
+	case iPhone7Plus
+	case iPhoneSE
+	
+	case iPodTouch1G
+	case iPodTouch2G
+	case iPodTouch3G
+	case iPodTouch4G
+	case iPodTouch5G
+	
+	case iPad
+	case iPad2
+	case iPad3
+	case iPad4
+	case iPadMini
+	case iPadMiniRetina
+	case iPadMini3
+	case iPadMini4
+	
+	case iPadAir
+	case iPadAir2
+	
+	case iPadPro9Inch
+	case iPadPro12Inch
+	
+	case simulator
 	case notAvailable
 	
 	/// Returns the current device type
@@ -72,7 +72,7 @@ public enum DeviceType: String, EnumProtocol {
 		var identifier = ""
 		
 		for child in mirror.children {
-			if let value = child.value as? Int8 , value != 0 {
+			if let value = child.value as? Int8, value != 0 {
 				identifier.append(String(UnicodeScalar(UInt8(value))))
 			}
 		}
