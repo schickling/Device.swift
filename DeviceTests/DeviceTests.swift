@@ -38,6 +38,7 @@ fileprivate extension DeviceType {
 		case .iPodTouch3G: return ["iPod3,1"]
 		case .iPodTouch4G: return ["iPod4,1"]
 		case .iPodTouch5G: return ["iPod5,1"]
+        case .iPodTouch6G: return ["iPod7,1"]
 			
 		case .iPad: return ["iPad1,1", "iPad1,2"]
 		case .iPad2: return ["iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4"]
@@ -66,7 +67,7 @@ class DeviceTests: XCTestCase {
 	}()
 	
 	let iPodTypes: [String] = {
-		return ["iPod1,1", "iPod2,1", "iPod3,1", "iPod4,1", "iPod5,1"]
+		return ["iPod1,1", "iPod2,1", "iPod3,1", "iPod4,1", "iPod5,1", "iPod7,1"]
 	}()
 	
 	var iPadTypes: [String] {
