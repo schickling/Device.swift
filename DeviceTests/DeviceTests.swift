@@ -20,18 +20,27 @@ fileprivate extension DeviceType {
         case .iPhone2G: return ["iPhone1,1"]
         case .iPhone3G: return ["iPhone1,2"]
         case .iPhone3GS: return ["iPhone2,1"]
+
         case .iPhone4: return ["iPhone3,1", "iPhone3,2", "iPhone3,3"]
         case .iPhone4S: return ["iPhone4,1"]
+
         case .iPhone5: return ["iPhone5,1", "iPhone5,2"]
         case .iPhone5C: return ["iPhone5,3", "iPhone5,4"]
         case .iPhone5S: return ["iPhone6,1", "iPhone6,2"]
-        case .iPhone6Plus: return ["iPhone7,1"]
+
         case .iPhone6: return ["iPhone7,2"]
+        case .iPhone6Plus: return ["iPhone7,1"]
         case .iPhone6S: return ["iPhone8,1"]
         case .iPhone6SPlus: return ["iPhone8,2"]
+
+        case .iPhoneSE: return ["iPhone8,4"]
+
         case .iPhone7: return ["iPhone9,1", "iPhone9,3"]
         case .iPhone7Plus: return ["iPhone9,2", "iPhone9,4"]
-        case .iPhoneSE: return ["iPhone8,4"]
+
+        case .iPhone8: return ["iPhone10,1", "iPhone10,4"]
+        case .iPhone8Plus: return ["iPhone10,2", "iPhone10,5"]
+        case .iPhoneX: return ["iPhone10,3", "iPhone10,6"]
 
         case .iPodTouch1G: return ["iPod1,1"]
         case .iPodTouch2G: return ["iPod2,1"]
@@ -63,7 +72,8 @@ class DeviceTests: XCTestCase {
     let iPhoneTypes: [String] = {
         return ["iPhone1,1", "iPhone1,2", "iPhone2,1", "iPhone3,1", "iPhone3,1", "iPhone3,2",
                 "iPhone3,3", "iPhone4,1", "iPhone5,1", "iPhone5,2", "iPhone5,3", "iPhone5,4",
-                "iPhone6,1", "iPhone6,2", "iPhone7,1", "iPhone7,2", "iPhone8,2", "iPhone8,1", "iPhone8,4"]
+                "iPhone6,1", "iPhone6,2", "iPhone7,1", "iPhone7,2", "iPhone8,2", "iPhone8,1", "iPhone8,4",
+                "iPhone10,1", "iPhone10,4", "iPhone10,2", "iPhone10,5", "iPhone10,3", "iPhone10,6"]
     }()
 
     let iPodTypes: [String] = {

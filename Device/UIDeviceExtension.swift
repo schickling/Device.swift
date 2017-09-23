@@ -22,22 +22,31 @@ public extension UIDevice {
 /// Enum representing the different types of iOS devices available
 public enum DeviceType: String, EnumProtocol {
     case iPhone2G
+
     case iPhone3G
     case iPhone3GS
+
     case iPhone4
     case iPhone4S
+
     case iPhone5
     case iPhone5C
     case iPhone5S
-    case iPhone6Plus
+
     case iPhone6
+    case iPhone6Plus
+
     case iPhone6S
     case iPhone6SPlus
+
     case iPhoneSE
+
     case iPhone7
     case iPhone7Plus
+
     case iPhone8
     case iPhone8Plus
+
     case iPhoneX
 
     case iPodTouch1G
@@ -65,7 +74,7 @@ public enum DeviceType: String, EnumProtocol {
     case simulator
     case notAvailable
 
-    // MARK: Constants
+    // MARK: - Constants
 
     /// Returns the current device type
     public static var current: DeviceType {
@@ -147,8 +156,8 @@ public enum DeviceType: String, EnumProtocol {
         case .iPhone5: return ["iPhone5,1", "iPhone5,2"]
         case .iPhone5C: return ["iPhone5,3", "iPhone5,4"]
         case .iPhone5S: return ["iPhone6,1", "iPhone6,2"]
-        case .iPhone6Plus: return ["iPhone7,1"]
         case .iPhone6: return ["iPhone7,2"]
+        case .iPhone6Plus: return ["iPhone7,1"]
         case .iPhone6S: return ["iPhone8,1"]
         case .iPhone6SPlus: return ["iPhone8,2"]
         case .iPhoneSE: return ["iPhone8,4"]
@@ -171,7 +180,7 @@ public enum DeviceType: String, EnumProtocol {
         case .iPad4: return ["iPad3,4", "iPad3,5", "iPad3,6"]
         case .iPadMini: return ["iPad2,5", "iPad2,6", "iPad2,7"]
         case .iPadMiniRetina: return ["iPad4,4", "iPad4,5", "iPad4,6"]
-        case .iPadMini3: return ["iPad4,7", "iPad4,8"]
+        case .iPadMini3: return ["iPad4,7", "iPad4,8", "iPad4,9"]
         case .iPadMini4: return ["iPad5,1", "iPad5,2"]
         case .iPadAir: return ["iPad4,1", "iPad4,2", "iPad4,3"]
         case .iPadAir2: return ["iPad5,3", "iPad5,4"]
@@ -180,7 +189,7 @@ public enum DeviceType: String, EnumProtocol {
         }
     }
 
-    // MARK: Inits
+    // MARK: - Inits
 
     /** Creates a device type
      - parameter identifier: The identifier of the device
@@ -204,7 +213,7 @@ public enum DeviceType: String, EnumProtocol {
 // MARK: - EnumProtocol
 
 internal protocol EnumProtocol: Hashable {
-    /// Returns All Enum Values
+    /// -returns: All Enum Values
     static var all: [Self] { get }
 }
 
@@ -212,7 +221,7 @@ internal protocol EnumProtocol: Hashable {
 
 // MARK: - Extensions
 
-internal extension EnumProtocol where Self:Hashable {
+internal extension EnumProtocol {
     
     static var all: [Self] {
         typealias Type = Self
