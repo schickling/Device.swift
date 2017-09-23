@@ -55,7 +55,7 @@ fileprivate extension DeviceType {
         case .iPad4: return ["iPad3,4", "iPad3,5", "iPad3,6"]
         case .iPadMini: return ["iPad2,5", "iPad2,6", "iPad2,7"]
         case .iPadMiniRetina: return ["iPad4,4", "iPad4,5", "iPad4,6"]
-        case .iPadMini3: return ["iPad4,7", "iPad4,8"]
+        case .iPadMini3: return ["iPad4,7", "iPad4,8", "iPad4,9"]
         case .iPadMini4: return ["iPad5,1", "iPad5,2"]
         case .iPadAir: return ["iPad4,1", "iPad4,2", "iPad4,3"]
         case .iPadAir2: return ["iPad5,3", "iPad5,4"]
@@ -127,7 +127,7 @@ class DeviceTests: XCTestCase {
         
         for type in DeviceType.all {
             XCTAssertFalse(type.displayName.isEmpty)
-            
+
             XCTAssert(type.identifiers == type.testIdentifiers)
         }
     }
