@@ -1,9 +1,13 @@
 # Changelog
 
-## 0.5.2
+## 1.1
 
-- **Update**: Update project settings to Swift 4
+- **Add**: Support for iPad Pro 10.5
 
 ## 1.0
 
 - **Add**: iPhone 8, iPhone 8 Plus, iPhone X
+
+## 0.5.2
+
+- **Update**: Update project settings to Swift 4
