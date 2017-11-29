@@ -69,6 +69,7 @@ public enum DeviceType: String, EnumProtocol {
     case iPadAir2
 
     case iPadPro9Inch
+    case iPadPro10p5Inch
     case iPadPro12Inch
 
     case simulator
@@ -136,6 +137,7 @@ public enum DeviceType: String, EnumProtocol {
         case .iPadAir: return "iPad Air"
         case .iPadAir2: return "iPad Air 2"
         case .iPadPro9Inch: return "iPad Pro 9 Inch"
+        case .iPadPro10p5Inch: return "iPad Pro 10.5 Inch"
         case .iPadPro12Inch: return "iPad Pro 12 Inch"
         case .simulator: return "Simulator"
         case .notAvailable: return "Not Available"
@@ -185,7 +187,8 @@ public enum DeviceType: String, EnumProtocol {
         case .iPadAir: return ["iPad4,1", "iPad4,2", "iPad4,3"]
         case .iPadAir2: return ["iPad5,3", "iPad5,4"]
         case .iPadPro9Inch: return ["iPad6,3", "iPad6,4"]
-        case .iPadPro12Inch: return ["iPad6,7", "iPad6,8"]
+        case .iPadPro10p5Inch: return ["iPad7,3", "iPad7,4"]
+        case .iPadPro12Inch: return ["iPad6,7", "iPad6,8", "iPad7,1", "iPad7,2"]
         }
     }
 
