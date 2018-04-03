@@ -6,6 +6,8 @@
 //
 //
 
+// MARK: Imports
+
 import Foundation
 import UIKit
 
@@ -67,9 +69,9 @@ public enum DeviceType: String, CaseIterable {
     case simulator
     case notAvailable
 
-    // MARK: - Constants
+    // MARK: Constants
 
-    /// Returns the current device type
+    /// The current device type
     public static var current: DeviceType {
 
         var systemInfo = utsname()
@@ -90,7 +92,7 @@ public enum DeviceType: String, CaseIterable {
 
     // MARK: Variables
 
-    /// Returns the display name of the device type
+    /// The display name of the device type
     public var displayName: String {
 
         switch self {
@@ -136,6 +138,7 @@ public enum DeviceType: String, CaseIterable {
         }
     }
 
+    /// The identifiers associated with each device type
     internal var identifiers: [String] {
 
         switch self {
@@ -184,12 +187,11 @@ public enum DeviceType: String, CaseIterable {
         }
     }
 
-    // MARK: - Inits
+    // MARK: Inits
 
-    /** Creates a device type
-     - parameter identifier: The identifier of the device
-     - returns: The device type based on the provided identifier
-     */
+    /// Creates a device type
+    ///
+    /// - Parameter identifier: The identifier of the device
     internal init(identifier: String) {
 
 		for device in DeviceType.allCases {
