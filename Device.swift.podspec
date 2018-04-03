@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                        = "Device.swift"
-  s.version                     = "1.1"
+  s.version                     = "1.1.1"
   s.license                     = { :type => 'MIT', :file => 'LICENSE' }
   s.summary                     = "Super-lightweight library to detect used device"
   s.homepage                    = "https://github.com/schickling/Device.swift"
