@@ -11,6 +11,7 @@ import XCTest
 
 fileprivate extension DeviceType {
 
+    /// The test identifers to test against
     var testIdentifiers: [String] {
 
         switch self {
@@ -125,10 +126,11 @@ class DeviceTests: XCTestCase {
         
         let emptyDevice = DeviceType(identifier: "")
         XCTAssertEqual(emptyDevice, DeviceType.notAvailable)
-        
-        for type in DeviceType.all {
-            XCTAssertFalse(type.displayName.isEmpty)
 
+		XCTAssertEqual(DeviceType.allCases.count, 39)
+        
+		for type in DeviceType.allCases {
+            XCTAssertFalse(type.displayName.isEmpty)
             XCTAssert(type.identifiers == type.testIdentifiers)
         }
     }
