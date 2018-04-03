@@ -21,7 +21,7 @@ var deviceType: DeviceType
 
 Add the following to your `Cartfile` and follow [these instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application)
 
-```
+```bash
 github "schickling/Device.swift"
 ```
 
@@ -35,7 +35,6 @@ use_frameworks!
 
 pod 'Device.swift'
 ```
-
 
 ## Usage
 
@@ -54,16 +53,12 @@ default: print("Check other available cases of DeviceType")
 
 Also, check out our [Documentation][docs-url]
 
-
-
 [carthage-image]: https://img.shields.io/badge/Carthage-compatible-4BC51D.svg
 [docs-image]: https://img.shields.io/cocoapods/metrics/doc-percent/Device.swift.svg
 [lang-image]: https://img.shields.io/badge/swift-3.0-orange.svg
 [license-image]: https://img.shields.io/github/license/schickling/Device.swift.svg
 [platform-image]: https://img.shields.io/cocoapods/p/Device.swift.svg
 [pod-version-image]: https://img.shields.io/cocoapods/v/Device.swift.svg
-
-
 [carthage-url]: https://github.com/Carthage/Carthage
 [cocoapod-url]: http://cocoapods.org/pods/Device.swift
 [docs-url]: http://cocoadocs.org/docsets/Device.swift
