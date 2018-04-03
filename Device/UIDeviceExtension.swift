@@ -11,14 +11,6 @@ import UIKit
 
 // MARK: -
 
-public extension UIDevice {
-
-    /// Returns the `DeviceType` of the device in use
-    public var deviceType: DeviceType {
-        return DeviceType.current
-    }
-}
-
 /// Enum representing the different types of iOS devices available
 public enum DeviceType: String, CaseIterable {
     case iPhone2G
@@ -213,6 +205,14 @@ public enum DeviceType: String, CaseIterable {
 }
 
 // MARK: -
+
+public extension UIDevice {
+
+	/// The `DeviceType` of the device in use
+	public var deviceType: DeviceType {
+		return DeviceType.current
+	}
+}
 
 #if swift(>=4.2)
 #else
