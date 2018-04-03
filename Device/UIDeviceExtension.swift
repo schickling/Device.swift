@@ -20,7 +20,7 @@ public extension UIDevice {
 }
 
 /// Enum representing the different types of iOS devices available
-public enum DeviceType: String, EnumProtocol {
+public enum DeviceType: String, CaseIterable {
     case iPhone2G
 
     case iPhone3G
@@ -200,7 +200,7 @@ public enum DeviceType: String, EnumProtocol {
      */
     internal init(identifier: String) {
 
-        for device in DeviceType.all {
+		for device in DeviceType.allCases {
             for deviceId in device.identifiers {
                 guard identifier == deviceId else { continue }
                 self = device
@@ -212,32 +212,32 @@ public enum DeviceType: String, EnumProtocol {
     }
 }
 
+// MARK: -
 
-// MARK: - EnumProtocol
-
-internal protocol EnumProtocol: Hashable {
-    /// -returns: All Enum Values
-    static var all: [Self] { get }
-}
+#if swift(>=4.2)
+#else
 
 // MARK: -
 
-// MARK: - Extensions
-
-internal extension EnumProtocol {
-    
-    static var all: [Self] {
-        typealias Type = Self
-        let cases = AnySequence { () -> AnyIterator<Type> in
-            var raw = 0
-            return AnyIterator {
-                let current: Self = withUnsafePointer(to: &raw) { $0.withMemoryRebound(to: Type.self, capacity: 1) { $0.pointee } }
-                guard current.hashValue == raw else { return nil }
-                raw += 1
-                return current
-            }
-        }
-        
-        return Array(cases)
-    }
+internal protocol CaseIterable {
+	associatedtype AllCases: Collection where AllCases.Element == Self
+	static var allCases: AllCases { get }
 }
+
+internal extension CaseIterable where Self: Hashable {
+	static var allCases: [Self] {
+		return [Self](AnySequence { () -> AnyIterator<Self> in
+			var raw = 0
+			return AnyIterator {
+				let current = withUnsafeBytes(of: &raw) { $0.load(as: Self.self) }
+				guard current.hashValue == raw else {
+					return nil
+				}
+				raw += 1
+				return current
+			}
+		})
+	}
+}
+
+#endif
