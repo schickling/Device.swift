@@ -55,7 +55,7 @@ Also, check out our [Documentation][docs-url]
 
 [carthage-image]: https://img.shields.io/badge/Carthage-compatible-4BC51D.svg
 [docs-image]: https://img.shields.io/cocoapods/metrics/doc-percent/Device.swift.svg
-[lang-image]: https://img.shields.io/badge/swift-3.0-orange.svg
+[lang-image]: https://img.shields.io/badge/swift-4.1-orange.svg
 [license-image]: https://img.shields.io/github/license/schickling/Device.swift.svg
 [platform-image]: https://img.shields.io/cocoapods/p/Device.swift.svg
 [pod-version-image]: https://img.shields.io/cocoapods/v/Device.swift.svg
