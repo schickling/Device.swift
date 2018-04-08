@@ -127,9 +127,9 @@ class DeviceTests: XCTestCase {
         let emptyDevice = DeviceType(identifier: "")
         XCTAssertEqual(emptyDevice, DeviceType.notAvailable)
 
-		XCTAssertEqual(DeviceType.allCases.count, 39)
+        XCTAssertEqual(DeviceType.allCases.count, 39)
         
-		for type in DeviceType.allCases {
+        for type in DeviceType.allCases {
             XCTAssertFalse(type.displayName.isEmpty)
             XCTAssert(type.identifiers == type.testIdentifiers)
         }

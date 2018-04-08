@@ -194,7 +194,7 @@ public enum DeviceType: String, CaseIterable {
     /// - Parameter identifier: The identifier of the device
     internal init(identifier: String) {
 
-		for device in DeviceType.allCases {
+        for device in DeviceType.allCases {
             for deviceId in device.identifiers {
                 guard identifier == deviceId else { continue }
                 self = device
@@ -210,10 +210,10 @@ public enum DeviceType: String, CaseIterable {
 
 public extension UIDevice {
 
-	/// The `DeviceType` of the device in use
-	public var deviceType: DeviceType {
-		return DeviceType.current
-	}
+    /// The `DeviceType` of the device in use
+    public var deviceType: DeviceType {
+        return DeviceType.current
+    }
 }
 
 #if swift(>=4.2)
@@ -222,24 +222,24 @@ public extension UIDevice {
 // MARK: -
 
 internal protocol CaseIterable {
-	associatedtype AllCases: Collection where AllCases.Element == Self
-	static var allCases: AllCases { get }
+    associatedtype AllCases: Collection where AllCases.Element == Self
+    static var allCases: AllCases { get }
 }
 
 internal extension CaseIterable where Self: Hashable {
-	static var allCases: [Self] {
-		return [Self](AnySequence { () -> AnyIterator<Self> in
-			var raw = 0
-			return AnyIterator {
-				let current = withUnsafeBytes(of: &raw) { $0.load(as: Self.self) }
-				guard current.hashValue == raw else {
-					return nil
-				}
-				raw += 1
-				return current
-			}
-		})
-	}
+    static var allCases: [Self] {
+        return [Self](AnySequence { () -> AnyIterator<Self> in
+            var raw = 0
+            return AnyIterator {
+                let current = withUnsafeBytes(of: &raw) { $0.load(as: Self.self) }
+                guard current.hashValue == raw else {
+                    return nil
+                }
+                raw += 1
+                return current
+            }
+        })
+    }
 }
 
 #endif
