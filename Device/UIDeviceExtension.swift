@@ -6,21 +6,15 @@
 //
 //
 
+// MARK: Imports
+
 import Foundation
 import UIKit
 
 // MARK: -
 
-public extension UIDevice {
-
-    /// Returns the `DeviceType` of the device in use
-    public var deviceType: DeviceType {
-        return DeviceType.current
-    }
-}
-
 /// Enum representing the different types of iOS devices available
-public enum DeviceType: String, EnumProtocol {
+public enum DeviceType: String, CaseIterable {
     case iPhone2G
 
     case iPhone3G
@@ -75,9 +69,9 @@ public enum DeviceType: String, EnumProtocol {
     case simulator
     case notAvailable
 
-    // MARK: - Constants
+    // MARK: Constants
 
-    /// Returns the current device type
+    /// The current device type
     public static var current: DeviceType {
 
         var systemInfo = utsname()
@@ -98,7 +92,7 @@ public enum DeviceType: String, EnumProtocol {
 
     // MARK: Variables
 
-    /// Returns the display name of the device type
+    /// The display name of the device type
     public var displayName: String {
 
         switch self {
@@ -144,6 +138,7 @@ public enum DeviceType: String, EnumProtocol {
         }
     }
 
+    /// The identifiers associated with each device type
     internal var identifiers: [String] {
 
         switch self {
@@ -192,15 +187,14 @@ public enum DeviceType: String, EnumProtocol {
         }
     }
 
-    // MARK: - Inits
+    // MARK: Inits
 
-    /** Creates a device type
-     - parameter identifier: The identifier of the device
-     - returns: The device type based on the provided identifier
-     */
+    /// Creates a device type
+    ///
+    /// - Parameter identifier: The identifier of the device
     internal init(identifier: String) {
 
-        for device in DeviceType.all {
+        for device in DeviceType.allCases {
             for deviceId in device.identifiers {
                 guard identifier == deviceId else { continue }
                 self = device
@@ -212,32 +206,40 @@ public enum DeviceType: String, EnumProtocol {
     }
 }
 
+// MARK: -
 
-// MARK: - EnumProtocol
+public extension UIDevice {
 
-internal protocol EnumProtocol: Hashable {
-    /// -returns: All Enum Values
-    static var all: [Self] { get }
+    /// The `DeviceType` of the device in use
+    public var deviceType: DeviceType {
+        return DeviceType.current
+    }
 }
+
+#if swift(>=4.2)
+#else
 
 // MARK: -
 
-// MARK: - Extensions
+internal protocol CaseIterable {
+    associatedtype AllCases: Collection where AllCases.Element == Self
+    static var allCases: AllCases { get }
+}
 
-internal extension EnumProtocol {
-    
-    static var all: [Self] {
-        typealias Type = Self
-        let cases = AnySequence { () -> AnyIterator<Type> in
+internal extension CaseIterable where Self: Hashable {
+    static var allCases: [Self] {
+        return [Self](AnySequence { () -> AnyIterator<Self> in
             var raw = 0
             return AnyIterator {
-                let current: Self = withUnsafePointer(to: &raw) { $0.withMemoryRebound(to: Type.self, capacity: 1) { $0.pointee } }
-                guard current.hashValue == raw else { return nil }
+                let current = withUnsafeBytes(of: &raw) { $0.load(as: Self.self) }
+                guard current.hashValue == raw else {
+                    return nil
+                }
                 raw += 1
                 return current
             }
-        }
-        
-        return Array(cases)
+        })
     }
 }
+
+#endif
