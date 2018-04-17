@@ -232,9 +232,6 @@ internal extension CaseIterable where Self: Hashable {
             var raw = 0
             return AnyIterator {
                 let current = withUnsafeBytes(of: &raw) { $0.load(as: Self.self) }
-                guard current.hashValue == raw else {
-                    return nil
-                }
                 raw += 1
                 return current
             }
