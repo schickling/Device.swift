@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2
+
+- **Fixed**: Resolved bug with allCases implementation
+
 ## 1.1.1
 
 - **Fixed**: Resolved bug with initialization via. device identifier
