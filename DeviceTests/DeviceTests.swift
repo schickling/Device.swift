@@ -99,34 +99,45 @@ class DeviceTests: XCTestCase {
         super.tearDown()
     }
 
-    func testExample() {
-
+    func testCurrentDevice() {
         XCTAssertNotEqual(DeviceType.current, DeviceType.notAvailable)
         XCTAssertNotEqual(UIDevice.current.deviceType, DeviceType.notAvailable)
+    }
 
+    func testSimulatorTypes() {
         for type in simulatorTypes {
             let deviceType = DeviceType(identifier: type)
             XCTAssertEqual(deviceType, DeviceType.simulator)
         }
+    }
 
+    func testiPhoneTypes() {
         for type in iPhoneTypes {
             let deviceType = DeviceType(identifier: type)
             XCTAssertNotEqual(deviceType, DeviceType.notAvailable)
         }
+    }
 
+    func testiPodTypes() {
         for type in iPodTypes {
             let deviceType = DeviceType(identifier: type)
             XCTAssertNotEqual(deviceType, DeviceType.notAvailable)
         }
-        
+    }
+
+    func testiPadTypes() {
         for type in iPadTypes {
             let deviceType = DeviceType(identifier: type)
             XCTAssertNotEqual(deviceType, DeviceType.notAvailable)
         }
-        
+    }
+
+    func testEmptyDevice() {
         let emptyDevice = DeviceType(identifier: "")
         XCTAssertEqual(emptyDevice, DeviceType.notAvailable)
+    }
 
+    func testDeviceTypeAllCases() {
         XCTAssertEqual(DeviceType.allCases.count, 39)
         
         for type in DeviceType.allCases {
