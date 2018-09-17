@@ -39,8 +39,9 @@ pod 'Device.swift'
 ## Usage
 
 ```swift
-import Device
 // Use import Device_swift if you're using Cocoapods
+
+import Device // append `_swift` for Cocoapods
 
 let deviceType = UIDevice.current.deviceType
 
@@ -55,10 +56,11 @@ Also, check out our [Documentation][docs-url]
 
 [carthage-image]: https://img.shields.io/badge/Carthage-compatible-4BC51D.svg
 [docs-image]: https://img.shields.io/cocoapods/metrics/doc-percent/Device.swift.svg
-[lang-image]: https://img.shields.io/badge/swift-4.1-orange.svg
+[lang-image]: https://img.shields.io/badge/swift-4.2-orange.svg
 [license-image]: https://img.shields.io/github/license/schickling/Device.swift.svg
 [platform-image]: https://img.shields.io/cocoapods/p/Device.swift.svg
 [pod-version-image]: https://img.shields.io/cocoapods/v/Device.swift.svg
+
 [carthage-url]: https://github.com/Carthage/Carthage
 [cocoapod-url]: http://cocoapods.org/pods/Device.swift
 [docs-url]: http://cocoadocs.org/docsets/Device.swift
