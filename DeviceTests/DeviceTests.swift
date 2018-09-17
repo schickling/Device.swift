@@ -43,6 +43,10 @@ fileprivate extension DeviceType {
         case .iPhone8Plus: return ["iPhone10,2", "iPhone10,5"]
         case .iPhoneX: return ["iPhone10,3", "iPhone10,6"]
 
+        case .iPhoneXS: return ["iPhone11,2"]
+        case .iPhoneXSMax: return ["iPhone11,4", "iPhone11,6"]
+        case .iPhoneXR: return ["iPhone11,8"]
+
         case .iPodTouch1G: return ["iPod1,1"]
         case .iPodTouch2G: return ["iPod2,1"]
         case .iPodTouch3G: return ["iPod3,1"]
@@ -138,11 +142,11 @@ class DeviceTests: XCTestCase {
     }
 
     func testDeviceTypeAllCases() {
-        XCTAssertEqual(DeviceType.allCases.count, 39)
+        XCTAssertEqual(DeviceType.allCases.count, 42)
         
         for type in DeviceType.allCases {
             XCTAssertFalse(type.displayName.isEmpty)
-            XCTAssert(type.identifiers == type.testIdentifiers)
+            XCTAssertEqual(type.identifiers, type.testIdentifiers)
         }
     }
 }
