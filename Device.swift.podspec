@@ -8,9 +8,10 @@ Pod::Spec.new do |s|
 
   s.source_files                = 'Device/**/*.{swift}'
   s.ios.deployment_target       = '8.0'
-  s.frameworks                  = 'UIKit'
+  s.ios.frameworks              = 'UIKit'
   s.requires_arc                = true
   spec.swift_version            = '4.2'
 
-  s.author                      = { 'Johannes Schickling' => 'schickling.j@gmail.com' }
+  s.authors                     = { 'Johannes Schickling' => 'schickling.j@gmail.com',
+                                    'Cody Winton' => 'cody.t.winton@gmail.com' }
 end
