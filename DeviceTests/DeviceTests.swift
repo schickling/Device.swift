@@ -58,6 +58,8 @@ fileprivate extension DeviceType {
         case .iPad2: return ["iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4"]
         case .iPad3: return ["iPad3,1", "iPad3,2", "iPad3,3"]
         case .iPad4: return ["iPad3,4", "iPad3,5", "iPad3,6"]
+        case .iPad5: return ["iPad6,11", "iPad6,12"]
+        case .iPad6: return ["iPad7,5", "iPad7,6"]
         case .iPadMini: return ["iPad2,5", "iPad2,6", "iPad2,7"]
         case .iPadMiniRetina: return ["iPad4,4", "iPad4,5", "iPad4,6"]
         case .iPadMini3: return ["iPad4,7", "iPad4,8", "iPad4,9"]
@@ -90,7 +92,9 @@ class DeviceTests: XCTestCase {
         return ["iPad1,1", "iPad1,2", "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4", "iPad2,5",
                 "iPad2,6", "iPad2,7", "iPad3,1", "iPad3,2", "iPad3,3", "iPad3,4", "iPad3,5",
                 "iPad3,6", "iPad4,1", "iPad4,2", "iPad4,3", "iPad4,4", "iPad4,5", "iPad4,6",
-                "iPad4,7", "iPad4,8", "iPad5,1", "iPad5,2", "iPad5,3", "iPad5,4", "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8", "iPad7,1", "iPad7,2", "iPad7,3", "iPad7,4"]
+                "iPad4,7", "iPad4,8", "iPad5,1", "iPad5,2", "iPad5,3", "iPad5,4", "iPad6,3",
+                "iPad6,4", "iPad6,7", "iPad6,8", "iPad7,1", "iPad7,2", "iPad7,3", "iPad7,4",
+                "iPad6,11", "iPad6,12", "iPad7,5", "iPad7,6"]
     }
 
     override func setUp() {
@@ -142,7 +146,7 @@ class DeviceTests: XCTestCase {
     }
 
     func testDeviceTypeAllCases() {
-        XCTAssertEqual(DeviceType.allCases.count, 42)
+        XCTAssertEqual(DeviceType.allCases.count, 44)
         
         for type in DeviceType.allCases {
             XCTAssertFalse(type.displayName.isEmpty)
