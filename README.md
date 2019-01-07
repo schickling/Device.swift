@@ -17,8 +17,6 @@ var deviceType: DeviceType
 
 ## Install
 
-**Note:** If you are trying to target Swift `4.2`, make sure to target the `swift-4.2` branch.
-
 ### Carthage
 
 Add the following to your `Cartfile` and follow [these instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application)
@@ -42,14 +40,15 @@ pod 'Device.swift'
 
 ```swift
 import Device
+
 // Use import Device_swift if you're using Cocoapods
 
 let deviceType = UIDevice.current.deviceType
 
 switch deviceType {
-case .iPhone6SPlus: print("Do stuff for iPhone6S Plus")
-case .iPadMini: print("Do stuff for iPad mini")
-default: print("Check other available cases of DeviceType")
+  case .iPhone6SPlus: print("Do stuff for iPhone6S Plus")
+  case .iPadMini: print("Do stuff for iPad mini")
+  default: print("Check other available cases of DeviceType")
 }
 ```
 
