@@ -1,6 +1,6 @@
-# Changelog
+# CHANGELOG
 
-## X.X.X
+## 1.2
 
 - **Added**: iPhone XS, iPhone XS Max, iPhone XR
 

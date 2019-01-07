@@ -9,7 +9,7 @@
 import XCTest
 @testable import Device
 
-fileprivate extension DeviceType {
+private extension DeviceType {
 
     /// The test identifers to test against
     var testIdentifiers: [String] {
