@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.2.1
+
+- **Fixed**: "Allow app extension API only" issue
+
 ## 1.2
 
 - **Added**: iPhone XS, iPhone XS Max, iPhone XR
