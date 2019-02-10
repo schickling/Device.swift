@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.2.2
+
+- **Added**: iPad 11 Inch
+
 ## 1.2.1
 
 - **Fixed**: "Allow app extension API only" issue

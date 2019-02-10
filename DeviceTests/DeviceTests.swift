@@ -148,7 +148,7 @@ class DeviceTests: XCTestCase {
     }
 
     func testDeviceTypeAllCases() {
-        XCTAssertEqual(DeviceType.allCases.count, 44)
+        XCTAssertEqual(DeviceType.allCases.count, 45)
         
         for type in DeviceType.allCases {
             XCTAssertFalse(type.displayName.isEmpty)
