@@ -52,6 +52,19 @@ switch deviceType {
 }
 ```
 
+## How to make release
+
+- Update pod version in podspec
+- Add tag
+- Add validate pod `pod trunk push Device.swift.podspec --allow-warnings`
+- Push to CocoaPods
+- Create release in github for with attached file for carthage
+
+```sh
+carthage build --no-skip-current
+carthage archive Device
+```
+
 Also, check out our [Documentation][docs-url]
 
 [carthage-image]: https://img.shields.io/badge/Carthage-compatible-4BC51D.svg
