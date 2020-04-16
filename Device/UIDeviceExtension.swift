@@ -133,7 +133,7 @@ public enum DeviceType: String, CaseIterable {
         case .iPhone11: return "iPhone 11"
         case .iPhone11Pro: return "iPhone 11 Pro"
         case .iPhone11ProMax: return "iPhone 11 Pro Max"
-		case .iPhoneSEGen2: return "iPhone SE"
+        case .iPhoneSEGen2: return "iPhone SE (2nd Gen)"
         case .iPodTouch1G: return "iPod Touch 1G"
         case .iPodTouch2G: return "iPod Touch 2G"
         case .iPodTouch3G: return "iPod Touch 3G"
