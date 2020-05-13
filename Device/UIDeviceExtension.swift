@@ -59,6 +59,7 @@ public enum DeviceType: String, CaseIterable {
     case iPodTouch4G
     case iPodTouch5G
     case iPodTouch6G
+    case iPodTouch7G
 
     case iPad
     case iPad2
@@ -140,6 +141,7 @@ public enum DeviceType: String, CaseIterable {
         case .iPodTouch4G: return "iPod Touch 4G"
         case .iPodTouch5G: return "iPod Touch 5G"
         case .iPodTouch6G: return "iPod Touch 6G"
+        case .iPodTouch7G: return "iPod Touch 7G"
         case .iPad: return "iPad"
         case .iPad2: return "iPad 2"
         case .iPad3: return "iPad 3"
@@ -200,6 +202,7 @@ public enum DeviceType: String, CaseIterable {
         case .iPodTouch4G: return ["iPod4,1"]
         case .iPodTouch5G: return ["iPod5,1"]
         case .iPodTouch6G: return ["iPod7,1"]
+        case .iPodTouch7G: return ["iPod9,1"]
 
         case .iPad: return ["iPad1,1", "iPad1,2"]
         case .iPad2: return ["iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4"]
