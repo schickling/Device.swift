@@ -47,6 +47,12 @@ private extension DeviceType {
         case .iPhoneXSMax: return ["iPhone11,4", "iPhone11,6"]
         case .iPhoneXR: return ["iPhone11,8"]
 
+        case .iPhone11: return ["iPhone12,1"]
+        case .iPhone11Pro: return ["iPhone12,3"]
+        case .iPhone11ProMax: return ["iPhone12,5"]
+
+        case .iPhoneSEGen2: return ["iPhone12,8"]
+
         case .iPodTouch1G: return ["iPod1,1"]
         case .iPodTouch2G: return ["iPod2,1"]
         case .iPodTouch3G: return ["iPod3,1"]
@@ -81,8 +87,10 @@ class DeviceTests: XCTestCase {
     let iPhoneTypes: [String] = {
         return ["iPhone1,1", "iPhone1,2", "iPhone2,1", "iPhone3,1", "iPhone3,1", "iPhone3,2",
                 "iPhone3,3", "iPhone4,1", "iPhone5,1", "iPhone5,2", "iPhone5,3", "iPhone5,4",
-                "iPhone6,1", "iPhone6,2", "iPhone7,1", "iPhone7,2", "iPhone8,2", "iPhone8,1", "iPhone8,4",
-                "iPhone10,1", "iPhone10,4", "iPhone10,2", "iPhone10,5", "iPhone10,3", "iPhone10,6"]
+                "iPhone6,1", "iPhone6,2", "iPhone7,1", "iPhone7,2", "iPhone8,2", "iPhone8,1",
+                "iPhone8,4", "iPhone10,1", "iPhone10,4", "iPhone10,2", "iPhone10,5", "iPhone10,3",
+                "iPhone10,6", "iPhone11,2", "iPhone11,4", "iPhone11,6", "iPhone11,8", "iPhone12,1",
+                "iPhone12,3", "iPhone12,5", "iPhone12,8"]
     }()
 
     let iPodTypes: [String] = {
@@ -148,7 +156,7 @@ class DeviceTests: XCTestCase {
     }
 
     func testDeviceTypeAllCases() {
-        XCTAssertEqual(DeviceType.allCases.count, 45)
+        XCTAssertEqual(DeviceType.allCases.count, 49)
         
         for type in DeviceType.allCases {
             XCTAssertFalse(type.displayName.isEmpty)
