@@ -244,7 +244,7 @@ public enum DeviceType: String, CaseIterable {
 public extension UIDevice {
 
     /// The `DeviceType` of the device in use
-    public var deviceType: DeviceType {
+    var deviceType: DeviceType {
         return DeviceType.current
     }
 }
