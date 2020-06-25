@@ -77,7 +77,8 @@
 				8FBDE8AF1B5CFC1300C78486 /* UIDeviceExtension.swift */,
 				8FBDE89A1B5CFA1B00C78486 /* Info.plist */,
 			);
-			path = Device;
+			name = Device;
+			path = Sources/Device;
 			sourceTree = "<group>";
 		};
 		8FBDE8A31B5CFA1C00C78486 /* DeviceTests */ = {
@@ -86,7 +87,8 @@
 				8FBDE8A41B5CFA1C00C78486 /* DeviceTests.swift */,
 				8FBDE8A61B5CFA1C00C78486 /* Info.plist */,
 			);
-			path = DeviceTests;
+			name = DeviceTests;
+			path = Tests/DeviceTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +165,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 8FBDE88B1B5CFA1B00C78486;
@@ -343,7 +346,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Device/Info.plist;
+				INFOPLIST_FILE = Sources/Device/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = schickling.Device;
@@ -364,7 +367,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Device/Info.plist;
+				INFOPLIST_FILE = Sources/Device/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = schickling.Device;
@@ -377,7 +380,7 @@
 		8FBDE8AD1B5CFA1C00C78486 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = DeviceTests/Info.plist;
+				INFOPLIST_FILE = Tests/DeviceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = schickling.DeviceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,7 +391,7 @@
 		8FBDE8AE1B5CFA1C00C78486 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = DeviceTests/Info.plist;
+				INFOPLIST_FILE = Tests/DeviceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = schickling.DeviceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
